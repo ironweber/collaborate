@@ -18,4 +18,6 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/collaborate
+//= require handlebars
 //= require_tree .
+//= require bootstrap-sprockets

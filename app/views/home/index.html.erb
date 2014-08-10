@@ -1,1 +1,34 @@
-Test
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Collaborate</title>
+</head>
+<body>
+	<div class="container">
+		<section class="col-sm-12">
+			<h1>Collaborate</h1>
+			
+			<% if !user_signed_in? %>
+			<a href="signin">Sign In</a><a href="signup">Sign Up</a>
+			<% else %>
+			<div class="">
+				<input type="text" name="link" placeholder="Share a link">
+				<input type="text" name="description" placeholder="Add a description">
+				<button class="btn btn-primary" data-action="new-item">Share</button>
+			</div>
+			<ul class="items">
+				<li>links to share</li>
+				<li>share</li>
+				<li>test</li>
+			</ul>
+			<% end %>
+		</section>
+	</div>
+	<script type="text/x-handlebars-template" id="items_template">
+		{{#each items}}
+			<li><a href="{{link}}" target="_blank">{{title}}</a></li>
+		{{/each}}
+	</script>
+
+</body>
+</html>

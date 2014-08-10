@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem "rails-backbone"
 gem 'font-awesome-sass'
 gem 'handlebars_assets'
+gem 'bootstrap-sass'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

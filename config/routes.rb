@@ -1,6 +1,24 @@
 Collaborate::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  devise_for :users,
+    :skip => [:sessions, :registrations, :passwords] 
+    as :user do
+        get 'signin' => 'devise/sessions#new', :as => :new_user_session
+        post 'signin' => 'devise/sessions#create', :as => :user_session
+        delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
+        get 'signup' => 'registrations#new', :as => :new_user_registration
+        post 'signup' => 'registrations#create', :as => :user_registration
+        delete 'signup' => 'devise/registrations#destroy', :as => :delete_user_registration
+        get 'account/edit' => 'devise/registrations#edit', :as => :edit_user_registration
+        put 'account/edit' => 'registrations#update'
+        get 'forgot-password' => 'devise/passwords#new', :as => :new_user_password
+        post 'forgot-password' => 'devise/passwords#create', :as => :user_password
+        get 'reset-password' => 'devise/passwords#edit', :as => :edit_user_password
+        patch 'reset-password' => 'devise/passwords#update'
+        put 'reset-password' => 'devise/passwords#update'
+    end
+
 
   # You can have the root of your site routed with "root"
   root 'home#index'
