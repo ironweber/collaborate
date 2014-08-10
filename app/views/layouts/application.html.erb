@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<% if user_signed_in? %>
+	<%= link_to('Profile', :edit_user_registration) %><%= link_to('Logout', :destroy_user_session, :method => :delete) %>
+<% end %>
+<div class="container">
+	<%= yield %>
+</div>
 </body>
 </html>
