@@ -9,26 +9,53 @@
 			<h1>Collaborate</h1>
 			
 			<% if !user_signed_in? %>
-			<a href="signin">Sign In</a><a href="signup">Sign Up</a>
+				<a href="signin" class="btn btn-primary">Sign In</a>
+				<a href="signup" class="btn btn-primary">Sign Up</a>
 			<% else %>
-			<div class="">
-				<input type="text" name="link" placeholder="Share a link">
-				<input type="text" name="description" placeholder="Add a description">
-				<button class="btn btn-primary" data-action="new-item">Share</button>
-			</div>
-			<ul class="items">
-				<li>links to share</li>
-				<li>share</li>
-				<li>test</li>
-			</ul>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<form role="form"></form>
+						<div class="form-group">
+							<input type="text" name="link" placeholder="URL" class="form-control">
+						</div>
+						<div class="form-group">
+							<input type="text" name="description" placeholder="Description" class="form-control">
+						</div>
+						<button class="btn btn-primary" data-action="new-item"><i class="fa fa-share"></i> Share</button>
+					</div>
+				</div>
+
+				<hr>
+				
+				<table class="items table table-striped">
+					 <!--<%= debug @items %> -->
+
+					 <% @items.each do |item| %>
+
+					 <tr class="row">
+					 	<td><%= item.url %></td> 
+					 	<td><%= item.description %></td> 
+					 	<td align="right">
+					 		<a href="<%= item.url %>" class="btn btn-info btn-small" target="_blank"><i class="fa fa-eye"></i></a> 
+					 		<button class="btn btn-warning"><i class="fa fa-heart"></i></button>
+					 		<button class="btn btn-danger"><i class="fa fa-times"></i></button>
+					 	</td>
+					 </tr>
+					 <% end %>
+				</ul>
 			<% end %>
 		</section>
 	</div>
-	<script type="text/x-handlebars-template" id="items_template">
-		{{#each items}}
-			<li><a href="{{link}}" target="_blank">{{title}}</a></li>
-		{{/each}}
+	<script type="text/x-handlebars-template" id="item-template">
+		<tr class="row">
+		 	<td>{{url}}</td> 
+		 	<td>{{description}}</td> 
+		 	<td align="right">
+		 		<a href="{{url}}" class="btn btn-info btn-small" target="_blank"><i class="fa fa-eye"></i></a> 
+		 		<button class="btn btn-warning"><i class="fa fa-heart"></i></button>
+		 		<button class="btn btn-danger"><i class="fa fa-times"></i></button>
+		 	</td>
+		</tr>
 	</script>
-
 </body>
 </html>
