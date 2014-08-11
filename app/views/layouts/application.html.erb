@@ -7,10 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if user_signed_in? %>
-	<%= link_to('Profile', :edit_user_registration) %><%= link_to('Logout', :destroy_user_session, :method => :delete) %>
-<% end %>
+
 <div class="container">
+<% if user_signed_in? %>
+	<div class="navbar-text navbar-right">
+		<%= link_to('Profile', :edit_user_registration) %>
+		<%= link_to('Logout', :destroy_user_session, :method => :delete) %>
+	</div>
+<% end %>
 	<%= yield %>
 </div>
 </body>

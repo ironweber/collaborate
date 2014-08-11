@@ -6,8 +6,9 @@
 		<a href="signup" class="btn btn-primary">Sign Up</a>
 	<% else %>
 		<div class="row">
+
 			<div class="col-xs-12 col-sm-6 col-md-4">
-				<form role="form"></form>
+				<h3>Share a link</h3>
 				<div class="form-group">
 					<input type="text" name="link" placeholder="URL" class="form-control">
 				</div>
@@ -16,30 +17,27 @@
 				</div>
 				<button class="btn btn-primary" data-action="new-item"><i class="fa fa-share"></i> Share</button>
 			</div>
+			<div class="col-xs-12 col-sm-6 col-md-8">
+				<table class="items table table-striped">
+				 <!--<%= debug @items %> -->
+
+				
+				<% @items.each do |item| %>
+				<tr class="row">
+					<td><%= item.url %></td> 
+					<td><%= item.description %></td> 
+					<td align="right">
+						<a href="<%= item.url %>" class="btn btn-info btn-small" target="_blank"><i class="fa fa-eye"></i></a> 
+						<button class="btn btn-warning"><i class="fa fa-heart"></i></button>
+						<button class="btn btn-danger"><i class="fa fa-times"></i></button>
+					</td>
+				</tr>
+				<% end %>
+				</table>
+			</div>
 		</div>
 
-		<table class="items table table-striped">
-			 <!--<%= debug @items %> -->
-			<thead>
-				<tr>
-					<th></th>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
-			
-			<% @items.each do |item| %>
-			<tr class="row">
-				<td><%= item.url %></td> 
-				<td><%= item.description %></td> 
-				<td align="right">
-					<a href="<%= item.url %>" class="btn btn-info btn-small" target="_blank"><i class="fa fa-eye"></i></a> 
-					<button class="btn btn-warning"><i class="fa fa-heart"></i></button>
-					<button class="btn btn-danger"><i class="fa fa-times"></i></button>
-				</td>
-			</tr>
-			<% end %>
-		</ul>
+		
 	<% end %>
 </section>
 

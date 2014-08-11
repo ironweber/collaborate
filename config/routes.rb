@@ -25,6 +25,11 @@ Collaborate::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  get "/404", :to => "errors#not_found"
+  get "/422", :to => "errors#unacceptable"
+  get "/500", :to => "errors#internal_error"
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
