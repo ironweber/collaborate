@@ -1,6 +1,6 @@
 <h1>Listing items</h1>
 
-<table class="table">
+<table>
   <thead>
     <tr>
       <th></th>
@@ -11,15 +11,10 @@
 
   <tbody>
     <% @items.each do |item| %>
-     <tr>
-        <td><%= item.url %></td>
-        <td><%= item.description %></td>
-        <td></td>
-      </tr>
       <tr>
-        <td></td>
-        <td></td>
-        <td><%= link_to 'Show', item %> <%= link_to 'Edit', edit_item_path(item) %> <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
