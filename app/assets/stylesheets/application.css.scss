@@ -14,3 +14,18 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+.cf:before, .cf:after { content: " "; display: table; }
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+ul {
+	list-style: none;
+
+	li {
+		margin-bottom: 10px;
+		padding: 10px;
+		&:hover {
+			background-color: #f8f8f8;
+		}
+	}
+}

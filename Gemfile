@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', '~>0.3.15'
 # gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -21,6 +21,7 @@ gem 'font-awesome-sass'
 gem 'handlebars_assets'
 gem 'bootstrap-sass'
 
+gem 'opengraph'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

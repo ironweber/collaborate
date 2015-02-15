@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require handlebars
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
@@ -17,7 +18,12 @@
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
-//= require backbone/collaborate
-//= require handlebars
-//= require_tree .
 //= require bootstrap-sprockets
+
+//= require_tree ./backbone/templates
+//= require collab
+//= require_tree ./backbone/models
+//= require_tree ./backbone/collections
+//= require_tree ./backbone/views
+//= require_tree ./backbone/routers
+//= require init

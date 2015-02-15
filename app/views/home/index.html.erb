@@ -10,7 +10,7 @@
 			<div class="new-item-form col-xs-12 col-sm-6 col-md-4">
 				<h3>Share a link</h3>
 				<div class="form-group">
-					<input type="text" name="link" placeholder="URL" class="form-control">
+					<input type="text" name="url" placeholder="URL" class="form-control">
 				</div>
 				<div class="form-group">
 					<input type="text" name="description" placeholder="Description" class="form-control">
@@ -23,19 +23,5 @@
 				</div>
 			</div>
 		</div>
-
-		
 	<% end %>
 </section>
-
-<script type="text/x-handlebars-template" id="item-template">
-	<tr class="row">
-	 	<td>{{url}}</td> 
-	 	<td>{{description}}</td> 
-	 	<td align="right">
-	 		<a href="{{url}}" class="btn btn-info btn-small" target="_blank"><i class="fa fa-eye"></i></a> 
-	 		<button class="btn btn-warning"><i class="fa fa-heart"></i></button>
-	 		<button class="btn btn-danger" data-action="destroy-item"><i class="fa fa-times"></i></button>
-	 	</td>
-	</tr>
-</script>
