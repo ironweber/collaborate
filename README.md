@@ -1,4 +1,4 @@
 collaborate
 ===========
 
-Sharing links and videos.
+Share whatever you want!
